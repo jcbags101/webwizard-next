@@ -9,7 +9,7 @@
     "lint": "next lint",
     "postinstall": "npx prisma generate",
     "prisma:migrate": "prisma migrate deploy",
-    "vercel-build": "npm run prisma:generate && next build && npm run prisma:migrate"
+    "vercel-build": "npx prisma:generate && next build && npx prisma:migrate"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
