@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,37 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="flex justify-between items-center p-4 bg-white">
+          <h1 className="text-2xl font-bold text-gray-800">WebWizard</h1>
+          <nav>
+            <ul className="flex gap-4">
+              <li>
+                <a
+                  href="/auth/signin"
+                  className="text-blue-500 hover:underline"
+                >
+                  Sign In
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/auth/signup"
+                  className="text-blue-500 hover:underline"
+                >
+                  Sign Up
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/auth/signout"
+                  className="text-blue-500 hover:underline"
+                >
+                  Sign Out
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
         {children}
       </body>
     </html>
